@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Invitación 50 años</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Georgia', serif;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: #000;
+      border: 3px solid #f5c542; /* dorado */
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 500px;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(245,197,66,0.3);
+      animation: fadeIn 2s ease;
+    }
+
+    .card h1 {
+      font-size: 2.5rem;
+      color: #ff69b4; /* rosa */
+      margin-bottom: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    .card p {
+      font-size: 1.3rem;
+      color: #f5c542; /* dorado */
+      margin: 15px 0;
+      line-height: 1.6;
+    }
+
+    .direccion a {
+      display: inline-block;
+      margin-top: 25px;
+      font-size: 1.1rem;
+      background: linear-gradient(45deg, #f5c542, #ff69b4);
+      color: #000;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .direccion a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(245,197,66,0.6);
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ff69b4, 0 0 10px #f5c542; }
+      to { text-shadow: 0 0 15px #ff69b4, 0 0 25px #f5c542; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Shhhh...</h1>
+    <p>Es sorpresa ✨</p>
+    <p>Acompáñanos a celebrar el<br><strong>cumpleaños 50 de Elizabeth</strong></p>
+
+    <div class="direccion">
+      <a href="https://www.google.com/maps?q=Palacio+de+Bellas+Artes+CDMX" target="_blank">
+        📍 Ver ubicación
+      </a>
+    </div>
+  </div>
+</body>
+</html>

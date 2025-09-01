@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <title>Invitación 50 años</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
+
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Georgia', serif;
-      background: #111;
+      font-family: 'Playfair Display', serif;
+      background: #fdfdfd;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,38 +18,52 @@
     }
 
     .card {
-      background: #000;
-      border: 3px solid #f5c542; /* dorado */
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 500px;
+      background: #fff;
+      border: 6px double #d4af37; /* dorado */
+      border-radius: 16px;
+      padding: 60px 40px;
+      max-width: 600px;
       text-align: center;
-      box-shadow: 0 0 30px rgba(245,197,66,0.3);
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
       animation: fadeIn 2s ease;
     }
 
     .card h1 {
-      font-size: 2.5rem;
-      color: #ff69b4; /* rosa */
-      margin-bottom: 10px;
-      animation: glow 2s infinite alternate;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #a67c00; /* dorado más oscuro */
+      margin: 0 0 10px;
     }
 
     .card p {
-      font-size: 1.3rem;
-      color: #f5c542; /* dorado */
-      margin: 15px 0;
-      line-height: 1.6;
+      font-size: 1.2rem;
+      color: #444;
+      margin: 12px 0;
+    }
+
+    .card strong {
+      color: #a67c00;
+      font-size: 1.4rem;
+    }
+
+    .edad {
+      font-size: 4rem;
+      font-weight: bold;
+      color: transparent;
+      background: linear-gradient(45deg, #d4af37, #ffef9f, #d4af37);
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin: 20px 0;
     }
 
     .direccion a {
       display: inline-block;
       margin-top: 25px;
       font-size: 1.1rem;
-      background: linear-gradient(45deg, #f5c542, #ff69b4);
+      background: linear-gradient(45deg, #d4af37, #ff69b4);
       color: #000;
       text-decoration: none;
-      padding: 12px 25px;
+      padding: 12px 28px;
       border-radius: 25px;
       font-weight: bold;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -55,30 +71,29 @@
 
     .direccion a:hover {
       transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(245,197,66,0.6);
+      box-shadow: 0 0 15px rgba(212,175,55,0.6);
     }
 
-    /* Animaciones */
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.8); }
+      from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #ff69b4, 0 0 10px #f5c542; }
-      to { text-shadow: 0 0 15px #ff69b4, 0 0 25px #f5c542; }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Shhhh...</h1>
-    <p>Es sorpresa ✨</p>
-    <p>Acompáñanos a celebrar el<br><strong>cumpleaños 50 de Elizabeth</strong></p>
+    <h1>Shhh...</h1>
+    <p>Es una <strong>Sorpresa</strong></p>
+    <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
+
+    <div class="edad">50</div>
+    <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
+    <p>En:</p>
+    <p><strong>Gigena 238 - Otamendi Campana</strong></p>
 
     <div class="direccion">
-      <a href="https://www.google.com/maps?q=Palacio+de+Bellas+Artes+CDMX" target="_blank">
-        📍 Ver ubicación
+      <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
+        📍 Ver ubicación en Google Maps
       </a>
     </div>
   </div>

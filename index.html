@@ -15,23 +15,55 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+      perspective: 1500px; /* para animación tipo tarjeta */
+    }
+
+    .card-wrapper {
+      width: 600px;
+      max-width: 90%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: openCard 2.5s ease forwards;
     }
 
     .card {
-      background: #fff;
-      border: 6px double #d4af37; /* dorado */
+      background: #ffe4ec; /* rosa suave */
+      border: 6px double #d4af37;
       border-radius: 16px;
       padding: 60px 40px;
-      max-width: 600px;
       text-align: center;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
-      animation: fadeIn 2s ease;
+      box-shadow: 0 0 25px rgba(0,0,0,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Flores decorativas */
+    .card::before, .card::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      opacity: 0.8;
+    }
+
+    .card::before {
+      top: -20px;
+      left: -20px;
+      background-image: url('https://i.ibb.co/F0sMJZg/flower-top.png'); /* flor esquina sup izq */
+    }
+
+    .card::after {
+      bottom: -20px;
+      right: -20px;
+      background-image: url('https://i.ibb.co/m0Znfh3/flower-bottom.png'); /* flor esquina inf der */
     }
 
     .card h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
-      color: #a67c00; /* dorado más oscuro */
+      color: #a67c00;
       margin: 0 0 10px;
     }
 
@@ -74,27 +106,31 @@
       box-shadow: 0 0 15px rgba(212,175,55,0.6);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+    /* Animación apertura tarjeta */
+    @keyframes openCard {
+      0% { transform: rotateX(90deg) scale(0.8); opacity: 0; }
+      50% { transform: rotateX(-10deg) scale(1.05); opacity: 1; }
+      100% { transform: rotateX(0deg) scale(1); }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Shhh...</h1>
-    <p>Es una <strong>Sorpresa</strong></p>
-    <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
+  <div class="card-wrapper">
+    <div class="card">
+      <h1>Shhh...</h1>
+      <p>Es una <strong>Sorpresa</strong></p>
+      <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
 
-    <div class="edad">50</div>
-    <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
-    <p>En:</p>
-    <p><strong>Gigena 238 - Otamendi Campana</strong></p>
+      <div class="edad">50</div>
+      <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
+      <p>En:</p>
+      <p><strong>Gigena 238 - Otamendi Campana</strong></p>
 
-    <div class="direccion">
-      <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
-        📍 Ver ubicación en Google Maps
-      </a>
+      <div class="direccion">
+        <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
+          📍 Ver ubicación en Google Maps
+        </a>
+      </div>
     </div>
   </div>
 </body>

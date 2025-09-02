@@ -15,30 +15,40 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      perspective: 1500px; /* para animación tipo tarjeta */
+      perspective: 2000px; /* Necesario para efecto 3D */
     }
 
-    .card-wrapper {
+    .card-container {
       width: 600px;
       max-width: 90%;
+      height: 400px;
       position: relative;
-      transform-style: preserve-3d;
-      animation: openCard 2.5s ease forwards;
     }
 
     .card {
-      background: #ffe4ec; /* rosa suave */
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+    }
+
+    /* Interior */
+    .card .inside {
+      background: #ffe4ec; /* rosa interior */
       border: 6px double #d4af37;
-      border-radius: 16px;
-      padding: 60px 40px;
+      border-radius: 12px;
+      padding: 40px;
       text-align: center;
       box-shadow: 0 0 25px rgba(0,0,0,0.15);
-      position: relative;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
       overflow: hidden;
     }
 
     /* Flores decorativas */
-    .card::before, .card::after {
+    .inside::before, .inside::after {
       content: "";
       position: absolute;
       width: 120px;
@@ -46,34 +56,61 @@
       background-size: cover;
       background-repeat: no-repeat;
       opacity: 0.8;
+      pointer-events: none;
     }
 
-    .card::before {
+    .inside::before {
       top: -20px;
       left: -20px;
-      background-image: url('https://i.ibb.co/F0sMJZg/flower-top.png'); /* flor esquina sup izq */
+      background-image: url('https://i.ibb.co/F0sMJZg/flower-top.png');
     }
 
-    .card::after {
+    .inside::after {
       bottom: -20px;
       right: -20px;
-      background-image: url('https://i.ibb.co/m0Znfh3/flower-bottom.png'); /* flor esquina inf der */
+      background-image: url('https://i.ibb.co/m0Znfh3/flower-bottom.png');
     }
 
-    .card h1 {
+    /* Tapa */
+    .card .front {
+      background: #fff;
+      border: 6px double #d4af37;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #a67c00;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transform-origin: left;
+      animation: openCard 3s ease forwards;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes openCard {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(-150deg); }
+    }
+
+    /* Texto interior */
+    .inside h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
       color: #a67c00;
       margin: 0 0 10px;
     }
 
-    .card p {
+    .inside p {
       font-size: 1.2rem;
       color: #444;
       margin: 12px 0;
     }
 
-    .card strong {
+    .inside strong {
       color: #a67c00;
       font-size: 1.4rem;
     }
@@ -105,31 +142,32 @@
       transform: scale(1.1);
       box-shadow: 0 0 15px rgba(212,175,55,0.6);
     }
-
-    /* Animación apertura tarjeta */
-    @keyframes openCard {
-      0% { transform: rotateX(90deg) scale(0.8); opacity: 0; }
-      50% { transform: rotateX(-10deg) scale(1.05); opacity: 1; }
-      100% { transform: rotateX(0deg) scale(1); }
-    }
   </style>
 </head>
 <body>
-  <div class="card-wrapper">
+  <div class="card-container">
     <div class="card">
-      <h1>Shhh...</h1>
-      <p>Es una <strong>Sorpresa</strong></p>
-      <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
+      <!-- Interior -->
+      <div class="inside">
+        <h1>Shhh...</h1>
+        <p>Es una <strong>Sorpresa</strong></p>
+        <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
 
-      <div class="edad">50</div>
-      <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
-      <p>En:</p>
-      <p><strong>Gigena 238 - Otamendi Campana</strong></p>
+        <div class="edad">50</div>
+        <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
+        <p>En:</p>
+        <p><strong>Gigena 238 - Otamendi Campana</strong></p>
 
-      <div class="direccion">
-        <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
-          📍 Ver ubicación en Google Maps
-        </a>
+        <div class="direccion">
+          <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
+            📍 Ver ubicación en Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Tapa -->
+      <div class="front">
+        🎉 Invitación
       </div>
     </div>
   </div>

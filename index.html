@@ -48,7 +48,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: 'Great Vibes', cursive;
-  font-size: clamp(1rem, 5vw, 2rem); /* más grande en móvil */
+  font-size: clamp(1rem, 6vw, 2rem); /* más grande en móvil */
+  color: #a67c00; /* dorado */
   backface-visibility: hidden;
   transform-origin: left center;
   animation: abrirTapa 2s ease forwards;
@@ -56,13 +57,18 @@ body {
   z-index: 2;
   text-align: center;
   padding: 10px;
+}
 
-  /* Efecto de brillo dorado */
-  background: linear-gradient(90deg, #a67c00, #d4af37, #a67c00);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 3s linear infinite, abrirTapa 2s ease forwards 2s;
+/* Reverso sólido de la tapa */
+.front::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffe4ec; /* mismo color que la tapa */
+  border: 4px double #d4af37;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  transform: rotateY(180deg); /* cubre el reverso */
 }
 
 /* Interior */
@@ -106,14 +112,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2mm;
-  margin-top: 10mm;
-}
-
-/* Ajuste móvil: bajar un poco más el contenido */
-@media (max-width: 600px) {
-  .contenido {
-    margin-top: 18mm;
-  }
+  margin-top: 14mm; /* más abajo en móvil para no chocar con flores */
 }
 
 /* Textos dorados y llamativos */
@@ -121,14 +120,14 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   font-size: clamp(1rem, 4vw, 6mm);
-  color: #a67c00;
+  color: #a67c00; /* dorado */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .nombre {
   font-family: 'Great Vibes', cursive;
   font-size: clamp(2rem, 7vw, 10mm);
-  color: #d4af37;
+  color: #d4af37; /* dorado brillante */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   margin: 0;
 }
@@ -136,7 +135,7 @@ body {
 .edad {
   font-size: clamp(2.5rem, 8vw, 12mm);
   font-weight: bold;
-  color: #ffef9f;
+  color: #ffef9f; /* dorado suave */
   text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
   margin: 0;
 }
@@ -171,12 +170,6 @@ body {
 @keyframes abrirTapa {
   from { transform: rotateY(0deg); }
   to   { transform: rotateY(-180deg); }
-}
-
-/* Animación brillo */
-@keyframes shine {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
 }
 </style>
 </head>

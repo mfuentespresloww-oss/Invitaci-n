@@ -30,30 +30,19 @@
       overflow: hidden;
     }
 
-    /* Flores en esquinas */
-    .card::before,
-    .card::after {
+    /* Flor esquina superior izquierda */
+    .card::before {
       content: "";
       position: absolute;
-      width: 150px;
-      height: 150px;
+      top: -40px;
+      left: -40px;
+      width: 200px;
+      height: 200px;
+      background-image: url('https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png');
       background-size: contain;
       background-repeat: no-repeat;
-      opacity: 0.9;
+      opacity: 0.95;
       z-index: 1;
-    }
-
-    .card::before {
-      top: -20px;
-      left: -20px;
-      background-image: url('https://i.ibb.co/6Z8h5V2/flowers-top-left.png'); /* flor esquina sup izq */
-    }
-
-    .card::after {
-      bottom: -20px;
-      right: -20px;
-      background-image: url('https://i.ibb.co/6Z8h5V2/flowers-top-left.png'); /* misma flor, otra esquina */
-      transform: rotate(180deg);
     }
 
     .card h1 {

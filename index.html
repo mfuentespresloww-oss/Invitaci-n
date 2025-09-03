@@ -20,8 +20,8 @@
 
     .card-container {
       position: relative;
-      width: 500px;  /* 5 pulgadas aprox */
-      height: 700px; /* 7 pulgadas aprox */
+      width: 500px;  /* postal americana */
+      height: 700px;
       perspective: 2000px;
     }
 
@@ -29,7 +29,7 @@
       width: 100%;
       height: 100%;
       position: relative;
-      border-radius: 12px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
@@ -39,9 +39,9 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #ffe4ec; /* rosa */
-      border: 6px double #d4af37; /* dorado */
-      border-radius: 12px;
+      background: #ffe4ec;
+      border: 6px double #d4af37;
+      border-radius: 16px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -53,6 +53,8 @@
       animation: abrirTapa 2s ease forwards;
       animation-delay: 3s;
       z-index: 2;
+      text-align: center;
+      padding: 20px;
     }
 
     /* ----- INTERIOR ----- */
@@ -60,41 +62,57 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #fff8f9;
+      background: #fff0f6; /* rosa suave */
       border: 6px double #d4af37;
-      border-radius: 12px;
+      border-radius: 16px;
       padding: 40px 30px;
       text-align: center;
       z-index: 1;
       box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Adorno floral */
+    .inside::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 300px;
+      height: 300px;
+      background-image: url("https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      opacity: 0.95;
+      z-index: 0;
     }
 
     .inside h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: #a67c00;
       margin: 10px 0;
     }
 
     .inside p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #333;
-      margin: 10px 0;
+      margin: 8px 0;
     }
 
     .edad {
-      font-size: 4rem;
+      font-size: 6rem; /* más grande */
       font-weight: bold;
-      color: transparent;
-      background: linear-gradient(45deg, #d4af37, #ffef9f, #d4af37);
-      -webkit-background-clip: text;
-      background-clip: text;
+      color: #ff69b4; /* color vibrante */
       margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
     }
 
-    .direccion a {
+    .direccion a, .confirmacion a {
       display: inline-block;
-      margin-top: 20px;
+      margin-top: 15px;
       font-size: 1.1rem;
       background: linear-gradient(45deg, #d4af37, #ff69b4);
       color: #000;
@@ -105,48 +123,53 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .direccion a:hover {
+    .direccion a:hover, .confirmacion a:hover {
       transform: scale(1.05);
       box-shadow: 0 0 12px rgba(212,175,55,0.6);
     }
 
-    /* Adorno floral */
-    .inside::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 400px;
-      height: 400px;
-      background-image: url("https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.95;
-    }
-
+    /* Animación apertura */
     @keyframes abrirTapa {
       from { transform: rotateY(0deg); }
       to   { transform: rotateY(-180deg); }
     }
+
+    /* Distribución interior */
+    .inside .contenido {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
   </style>
 </head>
 <body>
   <div class="card-container">
     <div class="card">
+      <!-- Tapa -->
       <div class="front">
         Shhh... Es un secreto ✨
       </div>
+
+      <!-- Interior -->
       <div class="inside">
-        <h2>Acompáñanos a celebrar a</h2>
-        <h2><strong>Alizabet</strong></h2>
-        <div class="edad">50</div>
-        <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
-        <p>En:</p>
-        <p><strong>Gigena 238 - Otamendi Campana</strong></p>
-        <div class="direccion">
-          <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
-            📍 Ver ubicación
-          </a>
+        <div class="contenido">
+          <h2>Acompáñanos a celebrar el cumpleaños</h2>
+          <div class="edad">50</div>
+          <h2><strong>Elizabeth</strong></h2>
+          <p><strong>Fecha:</strong> 27 de septiembre 2025</p>
+          <p><strong>Hora:</strong> 17:00</p>
+          <p><strong>Dirección:</strong> Puerto Matamoros #28 Col. Casas Alemán</p>
+          <p><strong>Favor de confirmar asistencia:</strong> 5560781971</p>
+          <p><strong>Invitación personal.</strong></p>
+          <div class="direccion">
+            <a href="https://www.google.com/maps?q=Puerto+Matamoros+28+Col+Casas+Alemán" target="_blank">
+              📍 Ver ubicación
+            </a>
+          </div>
         </div>
       </div>
     </div>

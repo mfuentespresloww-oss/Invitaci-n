@@ -9,19 +9,19 @@
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Playfair Display', serif;
-      background: #fdfdfd;
+      background: #f9f4ef;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      perspective: 2000px; /* necesario para efecto 3D */
+      font-family: 'Playfair Display', serif;
+      perspective: 2000px; /* efecto 3D */
     }
 
     .card-container {
       position: relative;
-      width: 600px;
-      height: 400px;
+      width: 500px;
+      height: 320px;
       perspective: 2000px;
     }
 
@@ -29,6 +29,9 @@
       width: 100%;
       height: 100%;
       position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
     /* ----- TAPA ----- */
@@ -36,21 +39,19 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #ffe4ec;
-      border: 6px double #d4af37;
-      border-radius: 16px;
+      background: #ffe0eb;
+      border: 4px solid #d4af37;
+      border-radius: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #a67c00;
       backface-visibility: hidden;
       transform-origin: left center;
-      transform-style: preserve-3d;
       animation: abrirTapa 2s ease forwards;
-      animation-delay: 5s;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      animation-delay: 3s;
       z-index: 2;
     }
 
@@ -59,82 +60,53 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #ffe4ec;
-      border: 6px double #d4af37;
-      border-radius: 16px;
-      padding: 40px;
+      background: #fff8f9;
+      border: 4px solid #d4af37;
+      border-radius: 12px;
+      padding: 30px 20px;
       text-align: center;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
       z-index: 1;
-    }
-
-    /* Flor decorativa en interior */
-    .inside::before {
-      content: "";
-      position: absolute;
-      top: -60px;
-      left: -60px;
-      width: 320px;
-      height: 320px;
-      background-image: url('https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.95;
-      z-index: 0;
     }
 
     .inside h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 2rem;
       color: #a67c00;
-      position: relative;
-      z-index: 2;
+      margin-bottom: 5px;
     }
 
     .inside p {
-      font-size: 1.2rem;
-      color: #444;
-      margin: 12px 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .inside strong {
-      color: #a67c00;
-      font-size: 1.4rem;
+      font-size: 1rem;
+      color: #333;
+      margin: 8px 0;
     }
 
     .edad {
-      font-size: 4rem;
+      font-size: 3rem;
       font-weight: bold;
       color: transparent;
       background: linear-gradient(45deg, #d4af37, #ffef9f, #d4af37);
       -webkit-background-clip: text;
       background-clip: text;
-      margin: 20px 0;
-      position: relative;
-      z-index: 2;
+      margin: 15px 0;
     }
 
     .direccion a {
       display: inline-block;
-      margin-top: 25px;
-      font-size: 1.1rem;
+      margin-top: 15px;
+      font-size: 1rem;
       background: linear-gradient(45deg, #d4af37, #ff69b4);
       color: #000;
       text-decoration: none;
-      padding: 12px 28px;
-      border-radius: 25px;
+      padding: 10px 20px;
+      border-radius: 20px;
       font-weight: bold;
       transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      z-index: 2;
     }
 
     .direccion a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(212,175,55,0.6);
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(212,175,55,0.6);
     }
 
     /* Animación apertura */
@@ -148,7 +120,7 @@
   <div class="card-container">
     <div class="card">
       <div class="front">
-        Shhh... <br> Es un secreto ✨
+        Shhh... Es un secreto ✨
       </div>
       <div class="inside">
         <h2>Acompáñanos a celebrar a</h2>
@@ -159,7 +131,7 @@
         <p><strong>Gigena 238 - Otamendi Campana</strong></p>
         <div class="direccion">
           <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
-            📍 Ver ubicación en Google Maps
+            📍 Ver ubicación
           </a>
         </div>
       </div>

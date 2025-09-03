@@ -5,7 +5,7 @@
   <title>Invitación 50 años</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;700&display=swap');
 
     body {
       margin: 0;
@@ -21,7 +21,7 @@
 
     .card-container {
       position: relative;
-      width: 500px;  /* postal americana */
+      width: 500px;  
       height: 700px;
       perspective: 2000px;
     }
@@ -72,7 +72,8 @@
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
+      align-items: center;
     }
 
     /* Adorno floral */
@@ -81,8 +82,8 @@
       position: absolute;
       top: -40px;
       left: -40px;
-      width: 300px;
-      height: 300px;
+      width: 350px; /* +50px */
+      height: 350px;
       background-image: url("https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png");
       background-size: contain;
       background-repeat: no-repeat;
@@ -96,31 +97,44 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
+      margin-top: 60px; /* más espacio desde arriba */
     }
 
-    .inside h2 {
+    /* Textos personalizados */
+    .acompananos {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #d94c9d;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      margin-bottom: -10px;
+    }
+
+    .nombre {
       font-family: 'Great Vibes', cursive;
-      font-size: 2.4rem;
+      font-size: 3.5rem;
       color: #a67c00;
-      margin: 10px 0;
-    }
-
-    .inside p {
-      font-size: 1.3rem;
-      color: #333;
-      margin: 6px 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      margin: 0;
     }
 
     .edad {
-      font-size: 7rem; /* más grande */
+      font-size: 7rem; 
       font-weight: bold;
       color: #ff69b4; 
-      margin: 20px 0;
+      margin: 10px 0;
       text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
     }
 
-    .direccion a, .confirmacion a {
+    .detalle {
+      font-size: 1.3rem;
+      color: #333;
+      margin: 5px 0;
+      font-weight: 500;
+    }
+
+    .direccion a {
       display: inline-block;
       margin-top: 20px;
       font-size: 1.2rem;
@@ -133,7 +147,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .direccion a:hover, .confirmacion a:hover {
+    .direccion a:hover {
       transform: scale(1.05);
       box-shadow: 0 0 12px rgba(212,175,55,0.6);
     }
@@ -155,19 +169,23 @@
         padding: 15px;
       }
 
-      .inside h2 {
-        font-size: 2rem;
+      .acompananos {
+        font-size: 1.6rem;
       }
 
-      .inside p {
-        font-size: 1.1rem;
+      .nombre {
+        font-size: 2.5rem;
       }
 
       .edad {
         font-size: 5rem;
       }
 
-      .direccion a, .confirmacion a {
+      .detalle {
+        font-size: 1.1rem;
+      }
+
+      .direccion a {
         font-size: 1rem;
         padding: 10px 24px;
       }
@@ -185,14 +203,14 @@
       <!-- Interior -->
       <div class="inside">
         <div class="contenido">
-          <h2>Acompáñanos a celebrar el cumpleaños</h2>
+          <div class="acompananos">Acompáñanos a celebrar el cumpleaños</div>
           <div class="edad">50</div>
-          <h2><strong>Elizabeth</strong></h2>
-          <p><strong>Fecha:</strong> 27 de septiembre 2025</p>
-          <p><strong>Hora:</strong> 17:00</p>
-          <p><strong>Dirección:</strong> Puerto Matamoros #28 Col. Casas Alemán</p>
-          <p><strong>Favor de confirmar asistencia:</strong> 5560781971</p>
-          <p><strong>Invitación personal.</strong></p>
+          <div class="nombre">Elizabeth</div>
+          <div class="detalle"><strong>Fecha:</strong> 27 de septiembre 2025</div>
+          <div class="detalle"><strong>Hora:</strong> 17:00</div>
+          <div class="detalle"><strong>Dirección:</strong> Puerto Matamoros #28 Col. Casas Alemán</div>
+          <div class="detalle"><strong>Favor de confirmar asistencia:</strong> 5560781971</div>
+          <div class="detalle"><strong>Invitación personal.</strong></div>
           <div class="direccion">
             <a href="https://maps.app.goo.gl/1fzLX9pD4PujtyEo7" target="_blank">
               📍 Ver ubicación

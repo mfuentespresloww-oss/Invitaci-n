@@ -15,51 +15,84 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      perspective: 2000px; /* efecto 3D */
+      perspective: 2000px; /* necesario para efecto 3D */
+    }
+
+    .card-container {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      perspective: 2000px;
     }
 
     .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    /* ----- TAPA ----- */
+    .front {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       background: #ffe4ec;
       border: 6px double #d4af37;
       border-radius: 16px;
-      padding: 60px 40px;
-      max-width: 600px;
-      text-align: center;
-      box-shadow: 0 0 25px rgba(0,0,0,0.1);
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #a67c00;
+      backface-visibility: hidden;
+      transform-origin: left center;
       transform-style: preserve-3d;
-      transform-origin: left center; /* se abre como cuaderno */
-      transform: rotateY(-90deg); /* estado inicial cerrado */
-      animation: abrir 2s ease forwards;
-      animation-delay: 5s; /* espera 5 seg antes de abrir */
+      animation: abrirTapa 2s ease forwards;
+      animation-delay: 5s;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      z-index: 2;
     }
 
-    /* Flor esquina superior izquierda (más grande) */
-    .card::before {
+    /* ----- INTERIOR ----- */
+    .inside {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #ffe4ec;
+      border: 6px double #d4af37;
+      border-radius: 16px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    /* Flor decorativa en interior */
+    .inside::before {
       content: "";
       position: absolute;
       top: -60px;
       left: -60px;
-      width: 500px;
-      height: 500px;
+      width: 320px;
+      height: 320px;
       background-image: url('https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png');
       background-size: contain;
       background-repeat: no-repeat;
       opacity: 0.95;
-      z-index: 1;
+      z-index: 0;
     }
 
-    .card h1 {
+    .inside h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
       color: #a67c00;
-      margin: 0 0 10px;
       position: relative;
       z-index: 2;
     }
 
-    .card p {
+    .inside p {
       font-size: 1.2rem;
       color: #444;
       margin: 12px 0;
@@ -67,7 +100,7 @@
       z-index: 2;
     }
 
-    .card strong {
+    .inside strong {
       color: #a67c00;
       font-size: 1.4rem;
     }
@@ -104,28 +137,32 @@
       box-shadow: 0 0 15px rgba(212,175,55,0.6);
     }
 
-    /* Animación de apertura tipo cuaderno */
-    @keyframes abrir {
-      from { transform: rotateY(-90deg); opacity: 0; }
-      to   { transform: rotateY(0deg); opacity: 1; }
+    /* Animación apertura */
+    @keyframes abrirTapa {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(-180deg); }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Shhh...</h1>
-    <p>Es una <strong>Sorpresa</strong></p>
-    <p>Acompáñanos a celebrar a<br><strong>Alizabet</strong></p>
-
-    <div class="edad">50</div>
-    <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
-    <p>En:</p>
-    <p><strong>Gigena 238 - Otamendi Campana</strong></p>
-
-    <div class="direccion">
-      <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
-        📍 Ver ubicación en Google Maps
-      </a>
+  <div class="card-container">
+    <div class="card">
+      <div class="front">
+        Shhh... <br> Es un secreto ✨
+      </div>
+      <div class="inside">
+        <h2>Acompáñanos a celebrar a</h2>
+        <h2><strong>Alizabet</strong></h2>
+        <div class="edad">50</div>
+        <p>Te esperamos el<br><strong>Sábado 4 de Septiembre - 21:00 hs</strong></p>
+        <p>En:</p>
+        <p><strong>Gigena 238 - Otamendi Campana</strong></p>
+        <div class="direccion">
+          <a href="https://www.google.com/maps?q=Gigena+238+Otamendi+Campana" target="_blank">
+            📍 Ver ubicación en Google Maps
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </body>

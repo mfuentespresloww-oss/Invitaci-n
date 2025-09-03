@@ -19,12 +19,14 @@ body {
   perspective: 2000px;
 }
 
+/* Contenedor de la tarjeta */
 .card-container {
-  width: 600px;
-  height: 400px;
+  width: 153mm; /* ancho postal americana */
+  height: 91mm; /* alto postal americana */
   perspective: 2000px;
 }
 
+/* Tarjeta */
 .card {
   width: 100%;
   height: 100%;
@@ -34,19 +36,19 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
-/* TAPA */
+/* Tapa */
 .front {
   position: absolute;
   width: 100%;
   height: 100%;
   background: #ffe4ec;
-  border: 6px double #d4af37;
+  border: 4px double #d4af37;
   border-radius: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: 'Great Vibes', cursive;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   color: #a67c00; /* dorado */
   backface-visibility: hidden;
   transform-origin: left center;
@@ -54,34 +56,35 @@ body {
   animation-delay: 2s;
   z-index: 2;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
 }
 
-/* INTERIOR */
+/* Interior */
 .inside {
   position: absolute;
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #fce4f0, #f9d1f0, #f5c3f7);
-  border: 6px double #d4af37;
+  border: 4px double #d4af37;
   border-radius: 16px;
-  padding: 30px 20px;
+  padding: 10px;
   text-align: center;
   z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  box-sizing: border-box;
 }
 
 /* Adorno floral */
 .inside::before {
   content: "";
   position: absolute;
-  top: -40px;
-  left: -40px;
-  width: 350px;
-  height: 350px;
+  top: -25px;
+  left: -25px;
+  width: 200px;
+  height: 200px;
   background-image: url("https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png");
   background-size: contain;
   background-repeat: no-repeat;
@@ -89,58 +92,59 @@ body {
   z-index: 0;
 }
 
+/* Contenido interior */
 .contenido {
   z-index: 2;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  margin-top: 40px;
+  gap: 2mm;
+  margin-top: 10mm;
 }
 
-/* Textos dorados */
+/* Textos dorados y llamativos */
 .acompananos {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 6mm;
   color: #a67c00; /* dorado */
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .nombre {
   font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
+  font-size: 10mm;
   color: #d4af37; /* dorado brillante */
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   margin: 0;
 }
 
 .edad {
-  font-size: 5rem;
+  font-size: 12mm;
   font-weight: bold;
   color: #ffef9f; /* dorado suave */
   text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
-  margin: 5px 0;
+  margin: 0;
 }
 
 .detalle {
-  font-size: 1.2rem;
+  font-size: 4mm;
   color: #4a148c; 
   font-weight: 600;
   text-shadow: 1px 1px 2px rgba(255,255,255,0.6);
-  margin: 2px 0;
+  margin: 1mm 0;
 }
 
 .direccion a {
   display: inline-block;
-  margin-top: 12px;
-  font-size: 1.2rem;
+  margin-top: 1mm;
+  font-size: 5mm;
   background: linear-gradient(45deg, #a67c00, #d4af37);
   color: #fff;
   text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 20px;
+  padding: 2mm 6mm;
+  border-radius: 3mm;
   font-weight: bold;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -150,6 +154,7 @@ body {
   box-shadow: 0 0 12px rgba(212,175,55,0.6);
 }
 
+/* Animación tapa */
 @keyframes abrirTapa {
   from { transform: rotateY(0deg); }
   to   { transform: rotateY(-180deg); }
@@ -162,12 +167,12 @@ body {
     height: auto;
   }
 
-  .front { font-size: 1.8rem; }
-  .acompananos { font-size: 1.4rem; }
-  .nombre { font-size: 2.2rem; }
-  .edad { font-size: 4rem; }
-  .detalle { font-size: 1rem; }
-  .direccion a { font-size: 1rem; padding: 10px 24px; }
+  .front { font-size: 5vw; }
+  .acompananos { font-size: 4vw; }
+  .nombre { font-size: 7vw; }
+  .edad { font-size: 8vw; }
+  .detalle { font-size: 2.5vw; }
+  .direccion a { font-size: 3vw; padding: 2vw 4vw; }
 }
 </style>
 </head>

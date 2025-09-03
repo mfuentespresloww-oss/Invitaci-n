@@ -15,12 +15,12 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      perspective: 2000px; /* Necesario para el efecto 3D */
+      perspective: 2000px; /* efecto 3D */
     }
 
     .card {
-      background: #ffe4ec; /* fondo rosa */
-      border: 6px double #d4af37; /* dorado */
+      background: #ffe4ec;
+      border: 6px double #d4af37;
       border-radius: 16px;
       padding: 60px 40px;
       max-width: 600px;
@@ -29,7 +29,8 @@
       position: relative;
       overflow: hidden;
       transform-style: preserve-3d;
-      transform-origin: left center; /* Se abre como cuaderno */
+      transform-origin: left center; /* se abre como cuaderno */
+      transform: rotateY(-90deg); /* estado inicial cerrado */
       animation: abrir 2s ease forwards;
       animation-delay: 5s; /* espera 5 seg antes de abrir */
     }
@@ -40,8 +41,8 @@
       position: absolute;
       top: -60px;
       left: -60px;
-      width: 320px;
-      height: 320px;
+      width: 500px;
+      height: 500px;
       background-image: url('https://raw.githubusercontent.com/mfuentespresloww-oss/Invitaci-n/b75ff4257ad59cf97441cbb0a9f23cc9a9806ca1/corner-bouquet-acuarela-arreglo-floral-rosa-blanco-verde.png');
       background-size: contain;
       background-repeat: no-repeat;
@@ -52,7 +53,7 @@
     .card h1 {
       font-family: 'Great Vibes', cursive;
       font-size: 3rem;
-      color: #a67c00; /* dorado más oscuro */
+      color: #a67c00;
       margin: 0 0 10px;
       position: relative;
       z-index: 2;

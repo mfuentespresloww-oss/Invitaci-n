@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Invitación 50 años</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap');
 
@@ -62,7 +63,7 @@
       position: absolute;
       width: 100%;
       height: 100%;
-      background: #fff0f6; /* rosa suave */
+      background: linear-gradient(135deg, #ffe4ec, #ffd1e0, #fff0f6);
       border: 6px double #d4af37;
       border-radius: 16px;
       padding: 40px 30px;
@@ -89,35 +90,44 @@
       z-index: 0;
     }
 
+    .inside .contenido {
+      z-index: 2;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
     .inside h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
+      font-size: 2.4rem;
       color: #a67c00;
       margin: 10px 0;
     }
 
     .inside p {
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: #333;
-      margin: 8px 0;
+      margin: 6px 0;
     }
 
     .edad {
-      font-size: 6rem; /* más grande */
+      font-size: 7rem; /* más grande */
       font-weight: bold;
-      color: #ff69b4; /* color vibrante */
+      color: #ff69b4; 
       margin: 20px 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      text-shadow: 3px 3px 6px rgba(0,0,0,0.25);
     }
 
     .direccion a, .confirmacion a {
       display: inline-block;
-      margin-top: 15px;
-      font-size: 1.1rem;
+      margin-top: 20px;
+      font-size: 1.2rem;
       background: linear-gradient(45deg, #d4af37, #ff69b4);
       color: #000;
       text-decoration: none;
-      padding: 12px 28px;
+      padding: 14px 32px;
       border-radius: 25px;
       font-weight: bold;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -128,22 +138,40 @@
       box-shadow: 0 0 12px rgba(212,175,55,0.6);
     }
 
-    /* Animación apertura */
     @keyframes abrirTapa {
       from { transform: rotateY(0deg); }
       to   { transform: rotateY(-180deg); }
     }
 
-    /* Distribución interior */
-    .inside .contenido {
-      z-index: 2;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      .card-container {
+        width: 90%;
+        height: auto;
+      }
 
+      .front {
+        font-size: 2rem;
+        padding: 15px;
+      }
+
+      .inside h2 {
+        font-size: 2rem;
+      }
+
+      .inside p {
+        font-size: 1.1rem;
+      }
+
+      .edad {
+        font-size: 5rem;
+      }
+
+      .direccion a, .confirmacion a {
+        font-size: 1rem;
+        padding: 10px 24px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -166,7 +194,7 @@
           <p><strong>Favor de confirmar asistencia:</strong> 5560781971</p>
           <p><strong>Invitación personal.</strong></p>
           <div class="direccion">
-            <a href="https://www.google.com/maps?q=Puerto+Matamoros+28+Col+Casas+Alemán" target="_blank">
+            <a href="https://maps.app.goo.gl/1fzLX9pD4PujtyEo7" target="_blank">
               📍 Ver ubicación
             </a>
           </div>

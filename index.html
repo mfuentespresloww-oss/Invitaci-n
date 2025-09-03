@@ -21,8 +21,9 @@ body {
 
 /* Contenedor de la tarjeta */
 .card-container {
-  width: 91mm; /* ancho postal americana */
-  height: 153mm; /* alto postal americana */
+  width: 90vw; /* ocupar 90% del ancho de la pantalla */
+  max-width: 153mm; /* máximo tamaño postal real */
+  aspect-ratio: 91/153; /* mantiene proporción de postal americana */
   perspective: 2000px;
 }
 
@@ -207,4 +208,5 @@ body {
 </div>
 </body>
 </html>
+
 
